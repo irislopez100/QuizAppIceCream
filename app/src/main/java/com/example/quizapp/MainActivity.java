@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import  android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity{
@@ -16,6 +17,12 @@ public class MainActivity extends AppCompatActivity{
     Button falseBTN;
     int score;
     Button finishedBTN;
+    TextView questionTV;
+    Question q1;
+    Question q2;
+    Question q3;
+    Question q4;
+    Question q5;
 
     @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +33,14 @@ public class MainActivity extends AppCompatActivity{
         trueBTN = (Button) findViewById(R.id.trueBTN);
         falseBTN = (Button) findViewById(R.id.falseBTN);
         finishedBTN = (Button) findViewById(R.id.finishedBTN);
+        questionTV = (TextView) findViewById(R.id.questionTV);
         score = 0;
+
+        q1 = new Question("Icecram is made with milk and flour", false );
+        q2 = new Question("Dogs like IceCream", true);
+        q3 = new Question("IceCream can support the sun", false);
+        q4 = new Question("strawberry IceCream is color pink", true);
+        q5 = new Question("kids can eat IceCream", true);
 
         //set true button onClickListener
         trueBTN.setOnClickListener(new View.OnClickListener() {
